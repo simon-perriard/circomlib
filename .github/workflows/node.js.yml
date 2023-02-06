@@ -26,8 +26,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: rust-cargo
+      uses: actions-rs/cargo@v1.0.1
+
     # Install circom
-    - run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -y
     - run: git clone https://github.com/iden3/circom.git
     - run: cd circom && cargo build --release && cargo install --path circom
 
