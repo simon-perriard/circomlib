@@ -27,7 +27,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     # Install circom
-    - run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+    - run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -y
     - run: git clone https://github.com/iden3/circom.git
     - run: cd circom && cargo build --release && cargo install --path circom
 
